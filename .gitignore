@@ -1,3 +1,5 @@
+#==========This is a .gitignore file for Terraform projects============#
+
 # Local .terraform directories
 **/.terraform/*
 !.terraform/providers
@@ -25,3 +27,4 @@ override.tf.json
 # CLI configuration
 .terraformrc
 terraform.rc
+
