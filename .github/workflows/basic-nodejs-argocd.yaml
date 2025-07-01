@@ -49,7 +49,6 @@ jobs:
       - name: Update image tag in values.yaml
         run: |
           git clone https://github.com/${{ vars.GIT_USERNAME }}/devops.git
-          cd /gitops/argocd/basic-nodejs-deployment/api1
           
           sed -i "s/tag: .*/tag: \"${{ github.sha }}\"/" gitops/argocd/basic-nodejs-deployment/api1/values.yaml
           
