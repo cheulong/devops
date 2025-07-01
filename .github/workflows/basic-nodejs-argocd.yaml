@@ -50,7 +50,7 @@ jobs:
         run: |
           git clone https://github.com/${{ vars.GIT_USERNAME }}/devops.git
           
-          sed -i "s/tag: .*/tag: \"${{ github.sha }}\"/" gitops/argocd/basic-nodejs-deployment/api1/values.yaml
+          sed -i "s/tag: .*/tag: \"${{ github.sha }}\"/" devops/gitops/argocd/basic-nodejs-deployment/api1/values.yaml
           
           git config user.name "github-action"
           git config user.email "devops@searcheulong.com"
