@@ -52,7 +52,8 @@ jobs:
           cd devops/
           sed -i "s/tag: .*/tag: \"${{ github.sha }}\"/" gitops/argocd/basic-nodejs-deployment/api1/values.yaml
           
-          git config user.name "github-action"
-          git config user.email "devops@searcheulong.com"
+          git config --global user.name "github-action"
+          git config --global user.email "devops@searcheulong.com"
+          git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
           git commit -am "Update image to ${{ github.sha }}"
           git push origin main
