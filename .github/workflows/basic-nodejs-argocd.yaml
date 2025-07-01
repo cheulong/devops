@@ -54,5 +54,9 @@ jobs:
           
           git config --global user.name "github-action"
           git config --global user.email "devops@searcheulong.com"
+          git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
           git commit -am "Update image to ${{ github.sha }}"
           git push origin main
+        env:
+          GT_PAT: ${{ secrets.GIT_PAT }}
+          GT_USER: ${{ vars.GIT_USERNAME }}
