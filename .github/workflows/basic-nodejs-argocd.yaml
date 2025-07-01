@@ -54,7 +54,7 @@ jobs:
           git config --global user.name "github-action"
           git config --global user.email "devops@searcheulong.com"
           git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
-          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GIT_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "Update image to ${{ github.sha }}"
           git push origin main
         env:
