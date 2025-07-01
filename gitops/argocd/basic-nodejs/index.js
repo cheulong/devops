@@ -3,7 +3,7 @@ import express from 'express';
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('v1.0.0');
+  res.send('Current version: v1.0.0');
 });
 
 app.listen(3000, () => {
