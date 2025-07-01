@@ -58,5 +58,5 @@ jobs:
           git commit -am "Update image to ${{ github.sha }}"
           git push origin main
         env:
-          GT_PAT: ${{ secrets.GIT_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GIT_PAT }}
           GT_USER: ${{ vars.GIT_USERNAME }}
