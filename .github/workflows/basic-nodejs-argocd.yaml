@@ -27,7 +27,7 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: ./gitops/argocd/basic-node
-          file: ./gitops/argocd/basic-node/Dockerfile
+          context: ./gitops/argocd/basic-nodejs
+          file: ./gitops/argocd/basic-nodejs/Dockerfile
           push: true
-          tags: cheulong/basic-node:${{ github.sha }}
+          tags: cheulong/basic-nodejs:${{ github.sha }}
