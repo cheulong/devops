@@ -4,6 +4,6 @@ appName: my-api1
 image:
   repository: cheulong/basic-nodejs
   pullPolicy: IfNotPresent
-  tag: "23c6b361f10d6dab95677ae65ce52a148bd589fa"
+  tag: "d5e44e1b4c6f1aa011426a7f0af4129f69cdc392"
 
 
