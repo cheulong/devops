@@ -57,5 +57,4 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GIT_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "Update image to ${{ github.sha }}"
           git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
