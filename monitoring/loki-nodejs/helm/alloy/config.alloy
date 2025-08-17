@@ -1,0 +1,37 @@
+livedebugging {
+  enabled = true
+}
+
+// Write your Alloy config here:
+// endpoint = "0.0.0.0:4318"
+// logs_url_path = "/v1/logs"
+// metrics_url_path = "/v1/metrics"
+// traces_url_path = "/v1/traces"
+ 
+ otelcol.receiver.otlp "default" {
+   http {
+    cors {
+      allowed_origins = ["http://localhost:5173"]
+      allowed_headers = ["*"]
+      max_age         = 3600
+    }
+  }
+   grpc { }
+
+   output {
+     logs    = [otelcol.processor.batch.default.input]
+   }
+ }
+
+ otelcol.processor.batch "default" {
+    output {
+        logs = [otelcol.exporter.otlphttp.loki.input]
+    }
+}
+
+otelcol.exporter.otlphttp "loki" {
+  client {
+    endpoint = "http://loki.loki.svc.cluster.local:3100/otlp"
+  }
+}
+
