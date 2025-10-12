@@ -4,12 +4,12 @@ helm repo add grafana https://grafana.github.io/helm-charts
 
 helm repo update
 
-helm install loki grafana/loki -f values.yaml --namespace loki --create-namespace
+helm install loki grafana/loki --namespace loki --create-namespace -f loki-values.yaml 
 ```
 
 ### Upgrade Loki
 ```
-helm upgrade loki grafana/loki -f values.yaml --namespace loki
+helm upgrade loki grafana/loki --namespace loki -f loki-values.yaml
 ```
 
 ### Add Loki data source in Grafana
