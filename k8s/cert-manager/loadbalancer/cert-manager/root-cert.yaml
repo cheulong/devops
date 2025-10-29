@@ -1,0 +1,14 @@
+# root-cert.yaml
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: root-ca
+  namespace: cert-manager
+spec:
+  isCA: true
+  commonName: "example-root-ca"
+  secretName: root-ca-secret
+  issuerRef:
+    name: selfsigned-root
+    kind: Issuer

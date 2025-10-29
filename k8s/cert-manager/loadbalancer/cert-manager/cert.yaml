@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: myapp-cert
+  namespace: default
+spec:
+  secretName: myapp-tls
+  dnsNames:
+    - cheulong-homebrew.org
+    - movies.cheulongsear.dev
+  issuerRef:
+    name: letsencrypt-dns
+    kind: ClusterIssuer
